@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "bio": {
+      "type": "text",
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "photoAlt": {
+      "type": "string",
+      "required": true
+    },
+    "ctas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link",
+      "max": 2
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.git
+.env
+.env.*
+!.env.example
+node_modules
+dist
+build
+.strapi
+.tmp
+.cache
+public/uploads/*
+!public/uploads/.gitkeep
+*.log
+Dockerfile
+docker-compose*.yml
