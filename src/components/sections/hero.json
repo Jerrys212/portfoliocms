@@ -6,33 +6,27 @@
   },
   "options": {},
   "attributes": {
-    "eyebrow": {
+    "greeting": {
       "type": "string",
       "required": true
     },
-    "title": {
+    "titleTop": {
       "type": "string",
       "required": true
     },
-    "bio": {
+    "titleBottom": {
+      "type": "string",
+      "required": true
+    },
+    "taglineStart": {
       "type": "text",
       "required": true
     },
-    "photo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": ["images"]
+    "taglineHighlight": {
+      "type": "string"
     },
-    "photoAlt": {
-      "type": "string",
-      "required": true
-    },
-    "ctas": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.link",
-      "max": 2
+    "taglineEnd": {
+      "type": "string"
     }
   }
 }

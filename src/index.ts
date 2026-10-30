@@ -7,18 +7,41 @@ const READ_TOKEN_PERMISSIONS = [
   'api::home-page.home-page.find',
   'api::experience.experience.find',
   'api::experience.experience.findOne',
-  'api::stack-group.stack-group.find',
-  'api::stack-group.stack-group.findOne',
+  'api::technology.technology.find',
+  'api::technology.technology.findOne',
   'api::service.service.find',
   'api::service.service.findOne',
   'api::project.project.find',
   'api::project.project.findOne',
 ];
 
+const LOCALES = [
+  { code: 'es', name: 'Spanish (es)' },
+  { code: 'en', name: 'English (en)' },
+];
+
+const DEFAULT_LOCALE = 'es';
+
+const ensureLocales = async (strapi: Core.Strapi) => {
+  const localesService = strapi.plugin('i18n').service('locales');
+
+  for (const locale of LOCALES) {
+    if (!(await localesService.findByCode(locale.code))) {
+      await localesService.create(locale);
+    }
+  }
+
+  if ((await localesService.getDefaultLocale()) !== DEFAULT_LOCALE) {
+    await localesService.setDefaultLocale({ code: DEFAULT_LOCALE });
+  }
+};
+
 const ensureReadToken = async (strapi: Core.Strapi) => {
   const apiTokenService = strapi.service('admin::api-token');
 
-  if (await apiTokenService.exists({ name: READ_TOKEN_NAME })) {
+  const existing = await apiTokenService.getByName(READ_TOKEN_NAME);
+  if (existing) {
+    await apiTokenService.update(existing.id, { permissions: READ_TOKEN_PERMISSIONS });
     return;
   }
 
@@ -50,6 +73,7 @@ export default {
   register() {},
 
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
+    await ensureLocales(strapi);
     await ensureReadToken(strapi);
   },
 };

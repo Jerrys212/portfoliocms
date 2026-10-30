@@ -9,25 +9,32 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": { "localized": true }
+  },
   "attributes": {
     "title": {
       "type": "string",
       "required": true,
-      "unique": true
-    },
-    "description": {
-      "type": "text",
-      "required": true
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "icon": {
       "type": "enumeration",
       "enum": ["code", "server", "rocket"],
-      "required": true
+      "required": true,
+      "unique": true,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.paragraph",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "order": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
     }
   }
 }

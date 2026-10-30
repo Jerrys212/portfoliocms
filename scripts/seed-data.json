@@ -1,163 +1,278 @@
 {
   "global": {
-    "name": "Gerardo García",
-    "fullName": "Gerardo García Medina",
-    "role": "Full Stack Developer",
-    "email": "jerryrogers2305@gmail.com",
-    "phone": "(55) 4868-0612",
-    "linkedinUrl": "https://www.linkedin.com/in/gerardo-garcia-63209a239",
-    "cv": "cv-gerardo-garcia.pdf",
-    "seo": {
-      "metaTitle": "Gerardo García Medina — Full Stack Developer",
-      "metaDescription": "Desarrollador Full Stack especializado en Node.js y el ecosistema React/Next.js. Interfaces con shadcn/ui y Radix UI, pruebas con RTL y Playwright, despliegues en Vercel."
+    "shared": {
+      "name": "Gerardo García",
+      "fullName": "Gerardo García Medina",
+      "email": "gmgx21@outlook.com",
+      "githubUrl": "https://github.com/Jerrys212",
+      "linkedinUrl": "https://www.linkedin.com/in/gerardo-garcia-63209a239",
+      "cv": "cv-gerardo-garcia.pdf"
+    },
+    "locales": {
+      "es": {
+        "role": "Desarrollador Full Stack",
+        "seo": {
+          "metaTitle": "Gerardo García | Portafolio",
+          "metaDescription": "Gerardo García Medina, Desarrollador Full Stack con mayor fortaleza en el frontend: aplicaciones web escalables con React, Next.js, Node.js y .NET.",
+          "ogImageAlt": "Gerardo García, Desarrollador Full Stack"
+        }
+      },
+      "en": {
+        "role": "Full Stack Developer",
+        "seo": {
+          "metaTitle": "Gerardo García | Portfolio",
+          "metaDescription": "Gerardo García Medina, Full Stack Developer with a strong focus on frontend: scalable web applications with React, Next.js, Node.js and .NET.",
+          "ogImageAlt": "Gerardo García, Full Stack Developer"
+        }
+      }
     }
   },
   "homePage": {
-    "hero": {
-      "eyebrow": "Full Stack Developer",
-      "title": "Gerardo García Medina",
-      "bio": "Desarrollador Full Stack con sólida experiencia en el desarrollo de aplicaciones web escalables y orientadas al usuario, con especialización y mayor fortaleza en el frontend. He colaborado en proyectos de consultoría para distintos clientes, adaptándome con rapidez a diferentes stacks, arquitecturas y flujos de trabajo según las necesidades de cada proyecto. Me caracterizo por mi capacidad de aprendizaje acelerado y mi disposición a enfrentar nuevos retos tecnológicos sin temor a la curva de aprendizaje que estos representan; entiendo la tecnología como un campo en constante evolución y busco mantenerme siempre a la vanguardia. Comprometido con la calidad del código, las buenas prácticas y la satisfacción del cliente, busco formar parte de proyectos desafiantes donde pueda seguir creciendo técnicamente y aportando valor real a los equipos con los que trabajo.",
-      "photo": "hero.avif",
-      "photoAlt": "Foto de Gerardo García Medina",
-      "ctas": [
-        { "label": "Hablemos", "href": "#contacto", "variant": "primary" },
-        { "label": "Ver proyectos", "href": "#proyectos", "variant": "outline" }
-      ]
-    },
-    "about": {
-      "header": { "eyebrow": "Sobre mí", "heading": "Del diseño a la producción" },
-      "paragraphs": [
-        { "text": "Tengo experiencia integrando tecnologías para crear soluciones escalables, eficientes y orientadas al usuario. Actualmente colaboro en proyectos de consultoría como desarrollador frontend con Next.js, adaptándome a distintos stacks y librerías de UI según las necesidades de cada cliente." },
-        { "text": "Complemento el trabajo con pruebas automatizadas (RTL, Playwright), despliegues en Vercel, arquitecturas de monorepos con Docker, y herramientas de IA como Claude Code y Claude Design para optimizar el proceso de desarrollo." }
-      ],
-      "illustration": "illustrations/design-system.svg",
-      "highlights": [
-        { "number": "01", "text": "Pruebas con RTL y Playwright en cada entrega." },
-        { "number": "02", "text": "De Figma o Claude Design al código, sin fricción." },
-        { "number": "03", "text": "Componentes accesibles con shadcn/ui y Radix UI." }
-      ]
-    },
-    "stack": { "eyebrow": "Stack" },
-    "experience": { "eyebrow": "Experiencia", "heading": "Trayectoria profesional" },
-    "services": {
-      "header": { "eyebrow": "Servicios", "heading": "En qué puedo ayudarte" },
-      "illustration": "illustrations/problem-solving.svg",
-      "cta": { "label": "Hablemos de tu proyecto", "href": "#contacto", "variant": "primary" }
-    },
-    "projects": { "eyebrow": "Proyectos", "heading": "Trabajo reciente" },
-    "contact": {
-      "header": {
-        "eyebrow": "Contacto",
-        "heading": "Hablemos de tu proyecto",
-        "description": "Cuéntame qué necesitas y te responderé lo antes posible para revisar cómo puedo ayudarte."
+    "es": {
+      "hero": {
+        "greeting": "Hola, soy Gerardo García",
+        "titleTop": "Desarrollador",
+        "titleBottom": "Full Stack",
+        "taglineStart": "Construyo aplicaciones web escalables y orientadas al usuario, con especial fortaleza en el desarrollo",
+        "taglineHighlight": "frontend",
+        "taglineEnd": "."
       },
-      "illustration": "illustrations/contact.svg"
+      "skills": { "heading": "¿Qué hago?" },
+      "experience": { "eyebrow": "Trayectoria", "heading": "Experiencia" },
+      "projects": { "eyebrow": "Mi trabajo", "heading": "Proyectos" },
+      "contact": {
+        "header": {
+          "eyebrow": "Hablemos",
+          "heading": "Contacto",
+          "description": "¿Tienes una pregunta o un proyecto en mente? Escríbeme y te responderé lo antes posible."
+        },
+        "location": "México"
+      }
+    },
+    "en": {
+      "hero": {
+        "greeting": "Hi, I'm Gerardo García",
+        "titleTop": "Full Stack",
+        "titleBottom": "Developer",
+        "taglineStart": "I build scalable, user-focused web applications, with a particular strength in",
+        "taglineHighlight": "frontend",
+        "taglineEnd": " development."
+      },
+      "skills": { "heading": "What I do?" },
+      "experience": { "eyebrow": "Career", "heading": "Experience" },
+      "projects": { "eyebrow": "My work", "heading": "Projects" },
+      "contact": {
+        "header": {
+          "eyebrow": "Let's talk",
+          "heading": "Contact",
+          "description": "Have a question or a project in mind? Feel free to reach out and I'll get back to you as soon as possible."
+        },
+        "location": "Mexico"
+      }
     }
   },
-  "experiences": [
-    {
-      "company": "XDEVELOP",
-      "role": "Desarrollador Frontend",
-      "startDate": "2026-04-01",
-      "endDate": null,
-      "description": "Desarrollo de proyectos de consultoría con Next.js 16, App Router y Server Components, construyendo interfaces accesibles con shadcn/ui y Radix UI. Cubro cada entrega con pruebas en RTL y Playwright, despliego en Vercel y complemento el trabajo con APIs en NestJS, monorepos con Docker y herramientas de IA como Claude Code y Claude Design.",
-      "order": 1
-    },
-    {
-      "company": "Telo",
-      "role": "Desarrollador Front End",
-      "startDate": "2023-09-01",
-      "endDate": "2025-01-01",
-      "description": "Diseño y desarrollo de Web Components reutilizables en Angular y React con Angular Material y MUI, integrando APIs REST y WebSockets para funcionalidades en tiempo real. Construcción de APIs RESTful con .NET Core 8 y SQL Server, con control de versiones en Azure DevOps.",
-      "order": 2
-    },
-    {
-      "company": "Petco",
-      "role": "Desarrollador FullStack",
-      "startDate": "2022-11-01",
-      "endDate": "2023-06-01",
-      "description": "Prototipado de interfaces en Figma y desarrollo frontend con React.js y Vue.js, junto con APIs RESTful en Express y Node.js sobre MySQL y MongoDB. Despliegue en servidores VPS con NGINX, PM2 y SSL, colaborando con Git y GitLab en flujos de integración continua.",
-      "order": 3
-    },
-    {
-      "company": "Ids Comercial",
-      "role": "Becario Cells",
-      "startDate": "2022-05-01",
-      "endDate": "2022-09-01",
-      "description": "Desarrollo de Web Components con el framework CELLS para proyectos internos, gestión ágil con Jira Cloud y control de versiones en Bitbucket y GitLab bajo metodología SCRUM.",
-      "order": 4
-    }
-  ],
-  "stackGroups": [
-    {
-      "title": "Frontend",
-      "primary": ["React", "Next.js", "TypeScript"],
-      "secondary": ["shadcn/ui", "Radix UI", "TailwindCSS", "Vue.js", "Angular"],
-      "order": 1
-    },
-    {
-      "title": "Backend",
-      "primary": ["Node.js", "NestJS", "Express"],
-      "secondary": ["MongoDB", "MySQL", "SQL Server", ".NET Core"],
-      "order": 2
-    },
-    {
-      "title": "Testing",
-      "primary": ["React Testing Library"],
-      "secondary": ["Playwright"],
-      "order": 3
-    },
-    {
-      "title": "Infraestructura",
-      "primary": ["Vercel", "Docker"],
-      "secondary": ["Git / GitHub / GitLab", "Azure", "Monorepos", "Claude Code"],
-      "order": 4
-    }
+  "technologies": [
+    { "name": "React", "icon": "svg/react.svg", "order": 1 },
+    { "name": "Next.js", "icon": "svg/next.svg", "order": 2 },
+    { "name": "TypeScript", "icon": "svg/typeScript.svg", "order": 3 },
+    { "name": "JavaScript", "icon": "svg/javaScript.svg", "order": 4 },
+    { "name": "TailwindCSS", "icon": "svg/tailwindcss.svg", "order": 5 },
+    { "name": "Angular", "icon": "svg/angular.svg", "order": 6 },
+    { "name": "Vue.js", "icon": "svg/vue.svg", "order": 7 },
+    { "name": "Node.js", "icon": "svg/nodejs.svg", "order": 8 },
+    { "name": "NestJS", "icon": "svg/nestjs.svg", "order": 9 },
+    { "name": "Express", "icon": "svg/express.svg", "order": 10 },
+    { "name": ".NET", "icon": "svg/dotnet.svg", "order": 11 },
+    { "name": "MongoDB", "icon": "svg/mongodb.svg", "order": 12 },
+    { "name": "MySQL", "icon": "svg/mysql.svg", "order": 13 },
+    { "name": "Docker", "icon": "svg/docker.svg", "order": 14 },
+    { "name": "Git", "icon": "svg/git.svg", "order": 15 },
+    { "name": "Vercel", "icon": "svg/vercel.svg", "order": 16 },
+    { "name": "HTML5", "icon": "svg/HTML5.svg", "order": 17 },
+    { "name": "CSS3", "icon": "svg/CSS3.svg", "order": 18 }
   ],
   "services": [
     {
-      "title": "Desarrollo Frontend a medida",
-      "description": "Interfaces en Next.js y React con shadcn/ui y Radix UI: accesibles, responsivas y con foco en rendimiento.",
-      "icon": "code",
-      "order": 1
+      "shared": { "icon": "code", "order": 1 },
+      "locales": {
+        "es": {
+          "title": "Desarrollo Frontend",
+          "items": [
+            "Apps con Next.js, App Router y Server Components",
+            "Interfaces accesibles con shadcn/ui y Radix UI",
+            "Pruebas con React Testing Library y Playwright"
+          ]
+        },
+        "en": {
+          "title": "Frontend Development",
+          "items": [
+            "Apps with Next.js, App Router and Server Components",
+            "Accessible interfaces with shadcn/ui and Radix UI",
+            "Testing with React Testing Library and Playwright"
+          ]
+        }
+      }
     },
     {
-      "title": "Integración Full Stack",
-      "description": "APIs y servicios backend con Node.js, NestJS o .NET Core conectados a tu frontend, con pruebas automatizadas en cada entrega.",
-      "icon": "server",
-      "order": 2
+      "shared": { "icon": "server", "order": 2 },
+      "locales": {
+        "es": {
+          "title": "Desarrollo Backend",
+          "items": [
+            "APIs REST con Node.js, Express y NestJS",
+            "Microservicios con .NET Core 8 y SQL Server",
+            "Tiempo real con WebSockets y Socket.io"
+          ]
+        },
+        "en": {
+          "title": "Backend Development",
+          "items": [
+            "REST APIs with Node.js, Express and NestJS",
+            "Microservices with .NET Core 8 and SQL Server",
+            "Real-time features with WebSockets and Socket.io"
+          ]
+        }
+      }
     },
     {
-      "title": "Despliegue & DevOps",
-      "description": "Arquitecturas de monorepos con Docker, despliegues en Vercel y flujos listos para producción.",
-      "icon": "rocket",
-      "order": 3
+      "shared": { "icon": "rocket", "order": 3 },
+      "locales": {
+        "es": {
+          "title": "DevOps y Despliegue",
+          "items": [
+            "Despliegues en Vercel con entornos de preview",
+            "Monorepos con Docker",
+            "Servidores VPS con NGINX, PM2 y SSL"
+          ]
+        },
+        "en": {
+          "title": "DevOps & Deployment",
+          "items": [
+            "Vercel deployments with preview environments",
+            "Monorepos with Docker",
+            "VPS servers with NGINX, PM2 and SSL"
+          ]
+        }
+      }
+    }
+  ],
+  "experiences": [
+    {
+      "shared": {
+        "company": "XDEVELOP",
+        "startDate": "2026-04-01",
+        "endDate": null,
+        "tags": ["Next.js", "shadcn/ui", "Playwright", "NestJS", "Docker", "Vercel"],
+        "order": 1
+      },
+      "locales": {
+        "es": {
+          "role": "Desarrollador Frontend",
+          "description": "Proyectos de consultoría para distintos clientes con Next.js 16, App Router y Server Components. Interfaces accesibles con shadcn/ui y Radix UI, pruebas con RTL y Playwright, despliegues en Vercel y APIs con NestJS cuando el proyecto lo requiere."
+        },
+        "en": {
+          "role": "Frontend Developer",
+          "description": "Consulting projects for different clients with Next.js 16, App Router and Server Components. Accessible interfaces with shadcn/ui and Radix UI, testing with RTL and Playwright, Vercel deployments and NestJS APIs when the project needs them."
+        }
+      }
+    },
+    {
+      "shared": {
+        "company": "Telo",
+        "startDate": "2023-09-01",
+        "endDate": "2025-01-01",
+        "tags": ["Angular", "React", "MUI", ".NET Core 8", "SQL Server", "Azure DevOps"],
+        "order": 2
+      },
+      "locales": {
+        "es": {
+          "role": "Desarrollador Front End",
+          "description": "Web Components reutilizables en Angular y React con Angular Material y MUI, integración de APIs REST y WebSockets en tiempo real, y APIs RESTful con .NET Core 8 y SQL Server sobre Azure DevOps."
+        },
+        "en": {
+          "role": "Front End Developer",
+          "description": "Reusable Web Components in Angular and React with Angular Material and MUI, REST API and real-time WebSocket integrations, and RESTful APIs with .NET Core 8 and SQL Server on Azure DevOps."
+        }
+      }
+    },
+    {
+      "shared": {
+        "company": "Petco",
+        "startDate": "2022-11-01",
+        "endDate": "2023-06-01",
+        "tags": ["React", "Vue.js", "Node.js", "Express", "MongoDB", "NGINX"],
+        "order": 3
+      },
+      "locales": {
+        "es": {
+          "role": "Desarrollador Full Stack",
+          "description": "Prototipos en Figma y frontends con React y Vue, APIs RESTful con Express y Node.js sobre MySQL y MongoDB, y despliegues en VPS con NGINX, PM2 y SSL."
+        },
+        "en": {
+          "role": "Full Stack Developer",
+          "description": "Figma prototypes and frontends with React and Vue, RESTful APIs with Express and Node.js on MySQL and MongoDB, and VPS deployments with NGINX, PM2 and SSL."
+        }
+      }
+    },
+    {
+      "shared": {
+        "company": "Ids Comercial",
+        "startDate": "2022-05-01",
+        "endDate": "2022-09-01",
+        "tags": ["CELLS", "Web Components", "SCRUM", "Jira"],
+        "order": 4
+      },
+      "locales": {
+        "es": {
+          "role": "Becario CELLS",
+          "description": "Web Components con el framework CELLS para proyectos internos, trabajando con SCRUM, Jira Cloud, Bitbucket y GitLab."
+        },
+        "en": {
+          "role": "CELLS Intern",
+          "description": "Web Components with the CELLS framework for internal projects, working with SCRUM, Jira Cloud, Bitbucket and GitLab."
+        }
+      }
     }
   ],
   "projects": [
     {
-      "title": "Plataforma de Gestión Interna",
-      "description": "Panel administrativo con autenticación, roles y reportes en tiempo real construido con Next.js y shadcn/ui.",
-      "tags": ["Next.js", "TypeScript", "PostgreSQL"],
-      "image": "illustrations/documents.svg",
-      "projectStatus": "coming-soon",
-      "order": 1
+      "shared": {
+        "title": "Dulce Atardecer POS",
+        "image": "projects/frontdulceatardecer.png",
+        "repoUrl": "https://github.com/Jerrys212/frontdulceatardecer",
+        "liveUrl": "https://frontdulceatardecer.vercel.app",
+        "order": 1
+      },
+      "locales": {
+        "es": { "subtitle": "Punto de venta · Next.js 16" },
+        "en": { "subtitle": "Point of sale · Next.js 16" }
+      }
     },
     {
-      "title": "E-commerce Headless",
-      "description": "Tienda en línea desacoplada con checkout optimizado, integraciones de pago y despliegue continuo en Vercel.",
-      "tags": ["Next.js", "Stripe", "Docker"],
-      "image": "illustrations/interaction.svg",
-      "projectStatus": "coming-soon",
-      "order": 2
+      "shared": {
+        "title": "Dulce Atardecer API",
+        "image": "projects/dulceatardecer.png",
+        "repoUrl": "https://github.com/Jerrys212/DulceAtardecer",
+        "liveUrl": "https://dulceapi.pixelmangoweb.com/swagger",
+        "order": 2
+      },
+      "locales": {
+        "es": { "subtitle": "API REST · .NET Core" },
+        "en": { "subtitle": "REST API · .NET Core" }
+      }
     },
     {
-      "title": "Dashboard de Analítica",
-      "description": "Visualización de métricas de negocio en tiempo real con componentes accesibles y pruebas end-to-end.",
-      "tags": ["React", "Radix UI", "Playwright"],
-      "image": "illustrations/analytics.svg",
-      "projectStatus": "coming-soon",
-      "order": 3
+      "shared": {
+        "title": "Portfolio CMS",
+        "image": "projects/portfoliocms.png",
+        "repoUrl": "https://github.com/Jerrys212/portfoliocms",
+        "liveUrl": "https://portfoliocms.pixelmangoweb.com/admin",
+        "order": 3
+      },
+      "locales": {
+        "es": { "subtitle": "CMS headless · Strapi 5" },
+        "en": { "subtitle": "Headless CMS · Strapi 5" }
+      }
     }
   ]
 }

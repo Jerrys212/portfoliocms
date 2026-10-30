@@ -13,6 +13,9 @@
     "metaDescription": {
       "type": "text",
       "required": true
+    },
+    "ogImageAlt": {
+      "type": "string"
     }
   }
 }
