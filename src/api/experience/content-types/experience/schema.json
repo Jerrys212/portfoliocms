@@ -9,31 +9,45 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": { "localized": true }
+  },
   "attributes": {
     "company": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "role": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "startDate": {
       "type": "date",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "endDate": {
-      "type": "date"
+      "type": "date",
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.tag",
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "order": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": false } }
     }
   }
 }

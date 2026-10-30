@@ -11,10 +11,8 @@
       "repeatable": false,
       "component": "shared.section-header"
     },
-    "illustration": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
+    "location": {
+      "type": "string"
     }
   }
 }

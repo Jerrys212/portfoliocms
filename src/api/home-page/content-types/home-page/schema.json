@@ -9,42 +9,39 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": { "localized": true }
+  },
   "attributes": {
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.hero"
+      "component": "sections.hero",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
-    "about": {
+    "skills": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.about"
-    },
-    "stack": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.section-header"
+      "component": "shared.section-header",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "experience": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-header"
-    },
-    "services": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.services"
+      "component": "shared.section-header",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "projects": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.section-header"
+      "component": "shared.section-header",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "contact": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.contact"
+      "component": "sections.contact",
+      "pluginOptions": { "i18n": { "localized": true } }
     }
   }
 }
