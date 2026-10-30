@@ -1,6 +1,6 @@
 # portfoliocms
 
-CMS headless en Strapi 5 para el contenido de mi portfolio personal, cuyo frontend está hecho en Next.js. Todo el contenido sale de aquí, menos la navbar: hero, sobre mí, stack, experiencia, servicios, proyectos y contacto. El frontend lo lee por la API REST con un token de solo lectura.
+CMS headless en Strapi 5 para el contenido de mi portfolio personal, cuyo frontend está hecho en Next.js. Sigue la estructura de la plantilla `dark-minimal-next` y es bilingüe (`es` / `en`): hero, "¿Qué hago?", tecnologías, experiencia, proyectos y contacto. Los textos de interfaz se quedan en el frontend. El frontend lo lee por la API REST con un token de solo lectura.
 
 ## Stack
 
@@ -98,25 +98,27 @@ docker-compose.prod.yml Strapi + Postgres para producción
 
 ## Modelo de contenido
 
-| Tipo | Kind | Draft & Publish | Campo único |
-| --- | --- | --- | --- |
-| `global` | single | no | — |
-| `home-page` | single | no | — |
-| `experience` | collection | sí | `company` |
-| `stack-group` | collection | sí | `title` |
-| `service` | collection | sí | `title` |
-| `project` | collection | sí | `title` |
+El modelo sigue la estructura de la plantilla `dark-minimal-next`. El contenido es bilingüe con el plugin i18n: locales `es` (por defecto) y `en`, que crea el bootstrap.
 
-Componentes: `shared.section-header`, `shared.link`, `shared.tag`, `shared.highlight`, `shared.paragraph`, `shared.seo`, `sections.hero`, `sections.about`, `sections.services`, `sections.contact`.
+| Tipo | Kind | i18n | Draft & Publish | Campo único | Sección de la plantilla |
+| --- | --- | --- | --- | --- | --- |
+| `global` | single | sí | no | — | perfil, enlaces, CV y SEO |
+| `home-page` | single | sí | no | — | hero y encabezados de sección |
+| `service` | collection | sí | sí | `icon` | "¿Qué hago?" |
+| `technology` | collection | no | sí | `name` | carrusel de logos |
+| `experience` | collection | sí | sí | `company` | experiencia |
+| `project` | collection | sí | sí | `title` | proyectos |
 
-Los schemas viven como archivos en `src/api/*/content-types/*/schema.json` y `src/components/**`; los cambios al modelo se hacen ahí, no desde el Content-Type Builder.
+Componentes: `shared.section-header`, `shared.tag`, `shared.paragraph`, `shared.seo`, `sections.hero`, `sections.contact`.
 
-`experience.endDate` en `null` significa "Actualidad". El estado de un proyecto es `projectStatus` (`coming-soon` | `live`), porque `status` está reservado en tipos con Draft & Publish.
+Los schemas viven como archivos en `src/api/*/content-types/*/schema.json` y `src/components/**`; los cambios al modelo se hacen ahí, no desde el Content-Type Builder. Cada atributo declara si se localiza (`pluginOptions.i18n.localized`): los textos sí; URLs, fechas, tags, orden e imágenes no, y Strapi los sincroniza entre idiomas.
+
+`experience.endDate` en `null` significa "Actualidad". Los textos de interfaz (navbar, formulario, botones, pie de página) no viven aquí, sino en el diccionario del frontend.
 
 ## Acceso de lectura
 
 - El rol **Public** no tiene permisos: cualquier petición sin token responde `403`.
-- Al arrancar, `bootstrap` (`src/index.ts`) crea el API token **`portfolio-read`** si no existe. Es de tipo `custom`, sin caducidad, con `find` en `global` y `home-page`, y `find`/`findOne` en las cuatro colecciones.
+- Al arrancar, `bootstrap` (`src/index.ts`) crea el API token **`portfolio-read`** si no existe, y si ya existe le sincroniza los permisos. Es de tipo `custom`, sin caducidad, con `find` en `global` y `home-page`, y `find`/`findOne` en las cuatro colecciones.
 - La primera vez que se crea, el token se imprime **una sola vez** en la consola de Strapi. Guárdalo como `STRAPI_API_TOKEN` en las variables de entorno de servidor del frontend (nunca con prefijo `NEXT_PUBLIC_`).
 - Si se pierde: como `ENCRYPTION_KEY` está configurado, se puede ver de nuevo en **Settings → API Tokens → portfolio-read**. También se puede regenerar ahí, lo que invalida el anterior.
 
@@ -132,15 +134,14 @@ Strapi 5 no popula relaciones, media ni componentes por defecto.
 
 | Endpoint | Query |
 | --- | --- |
-| `GET /api/global` | `populate=*` |
-| `GET /api/home-page` | `populate[hero][populate]=*&populate[about][populate]=*&populate[services][populate]=*&populate[contact][populate]=*&populate[stack]=true&populate[experience]=true&populate[projects]=true` |
-| `GET /api/experiences` | `sort=order:asc` |
-| `GET /api/stack-groups` | `sort=order:asc&populate[primary]=true&populate[secondary]=true` |
-| `GET /api/services` | `sort=order:asc` |
-| `GET /api/projects` | `sort=order:asc&populate[tags]=true&populate[image]=true` |
-| `GET /api/projects/:documentId` | `populate[tags]=true&populate[image]=true` |
+| `GET /api/global` | `locale=…&populate=*` |
+| `GET /api/home-page` | `locale=…&populate[hero]=true&populate[skills]=true&populate[experience]=true&populate[projects]=true&populate[contact][populate]=*` |
+| `GET /api/services` | `locale=…&sort=order:asc&populate=items` |
+| `GET /api/technologies` | `sort=order:asc&populate=icon&pagination[pageSize]=100` |
+| `GET /api/experiences` | `locale=…&sort=order:asc&populate=tags` |
+| `GET /api/projects` | `locale=…&sort=order:asc&populate=image` |
 
-Las colecciones responden solo documentos publicados. Las URLs de media (`url`) son relativas: se les antepone el origen de Strapi.
+`locale` es `es` o `en`; sin él, Strapi devuelve `es`. Las colecciones responden solo documentos publicados. Las URLs de media (`url`) son relativas: se les antepone el origen de Strapi. El contrato completo está en [FRONTEND_API.md](FRONTEND_API.md).
 
 ## Seeder
 
@@ -150,9 +151,9 @@ pnpm seed
 
 `scripts/seed.ts` levanta Strapi sin servidor HTTP, carga `scripts/seed-data.json` y cierra:
 
-1. Sube los 8 archivos a la Media Library desde `C:\Users\gmgx2\Documents\personalprojects\portfolio\public` (se puede cambiar con `SEED_ASSETS_DIR`). Si ya existe un archivo con el mismo nombre, lo reutiliza.
-2. Crea o actualiza `global` y `home-page`.
-3. Hace upsert de cada colección por su campo único y publica cada documento.
+1. Sube los 22 archivos a la Media Library desde `C:\Users\gmgx2\Documents\personalprojects\dark-minimal-next\public` (se puede cambiar con `SEED_ASSETS_DIR`). Si ya existe un archivo con el mismo nombre, lo reutiliza.
+2. Crea o actualiza `global` y `home-page` en `es` y `en`.
+3. Hace upsert de cada colección por su campo único, en ambos idiomas, y publica cada documento.
 
 Es idempotente: correrlo N veces deja el mismo resultado, sin duplicados. Si algo falla, sale con código 1 e indica en qué paso falló.
 
@@ -161,14 +162,9 @@ Para cambiar el contenido base, edita `scripts/seed-data.json` y vuelve a correr
 La carpeta de `SEED_ASSETS_DIR` debe contener estos archivos (son los del `public/` del frontend):
 
 ```
-hero.avif
 cv-gerardo-garcia.pdf
-illustrations/analytics.svg
-illustrations/contact.svg
-illustrations/design-system.svg
-illustrations/documents.svg
-illustrations/interaction.svg
-illustrations/problem-solving.svg
+projects/*.png   (3 capturas de proyectos)
+svg/*.svg        (18 logos de tecnologías)
 ```
 
 ## Despliegue en producción (VPS con Docker)
